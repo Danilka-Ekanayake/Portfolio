@@ -724,14 +724,15 @@ h2 {
     color: #fff;
     background-color: transparent;
     border: 2px solid #ffffff;
-    border-radius: 10px 30px 15px;
+    border-radius:50px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .skills button:hover {
-    background-color: #ffffff;
-    color: #0a1a38;
+    border: 2px solid #0a1a38;
+    background-color: #0a1a38;
+    color: #ffffff;
     transform: scale(1.05);
 }
 .skill-category h3 {
@@ -1083,14 +1084,15 @@ h2 {
     color: #fff;
     background-color: transparent;
     border: 2px solid #ffffff;
-    border-radius: 10px 30px 15px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .tech-stack button:hover {
-    background-color: #ffffff;
-    color: #0a1a38;
+    border: 2px solid #0a1a38;
+    background-color: #0a1a38;
+    color: #ffffff;
     transform: scale(1.05);
 }
 /* Back to Top Button */

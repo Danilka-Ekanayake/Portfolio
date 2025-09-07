@@ -125,7 +125,14 @@ backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-
+//Skills section 
+ window.addEventListener("load", () => {
+      const progresses = document.querySelectorAll(".progress");
+      progresses.forEach(bar => {
+        const value = bar.getAttribute("data-progress");
+        bar.style.width = value + "%";
+      });
+    });
 //project page
 
   const filterButtons = document.querySelectorAll(".filter-btn");

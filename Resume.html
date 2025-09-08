@@ -1,81 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Danilka Ekanayake – View & Download</title>
-    <link rel="stylesheet" href="portfolio.css">
-    <link rel="icon" type="image/png" href="Pictures/Favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Danilka Ekanayake – View & Download</title>
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="icon" type="image/png" href="Pictures/Favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="page-wrapper">
-<header class="header">
-    <div class="logo">
-    <a href="index.html"><img src="Pictures/Favicon.png" alt="logo" /></a>
-    <a href="index.html">Portfolio</a>
-    </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Skills.html">Skills</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Resume.html">Resume</a>
-      <a href="Contact.html">Contact</a>
-    </nav>
-    <div>
-    <a href="Contact.html"><button class="cta-button">Hire me</button></a>
-    </div>
-  </header>
-<section id="resume" class="resume-section">
-    <div class="container">
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"><img src="Pictures/Favicon.png" alt="logo" /></a>
+        <a href="index.html">Portfolio</a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Skills.html">Skills</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Resume.html" class="active">Resume</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+      <div>
+        <a href="Contact.html"><button class="cta-button">Hire me</button></a>
+      </div>
+    </header>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+      <div class="container" data-aos="fade-up">
         <h2>My Resume</h2>
-        <p>Here’s a quick look at my background, experience, and qualifications. Download my full resume below.</p>
+        <p class="resume-summary">
+          I’m a 2nd-year IT undergraduate at UCSC, passionate about software engineering & full-stack development.  
+          Currently building projects like <strong>Cafe Bliss</strong>, <strong>Novex Foxter</strong>, and <strong>Ceylomart</strong> while sharpening my MERN stack skills.
+        </p>
 
-        <div class="resume-content">
-            <div class="resume-box">
-                <h3>Education</h3>
-                <ul>
-                    <li><strong>Bachelor of Information Technology</strong><br>University of Colombo School of Computing<strong>(UCSC)</strong><br>2023 October – Present</li>
-                    <li><strong>Advanced Level</strong><br>Kingswood College<br>2020 – 2022(2023)</li>
-                </ul>
-            </div>
-
-            <div class="resume-box">
-                <h3>Skills</h3>
-                <ul>
-                    <li>HTML, CSS, JavaScript</li>
-                    <li>Java (OOP, Fundamentals)</li>
-                    <li>Responsive Web Design</li>
-                    <li>Problem Solving</li>
-                </ul>
-            </div>
+        <!-- Education -->
+        <div class="resume-box">
+          <h3>Education</h3>
+          <ul>
+            <li>
+              <strong>Bachelor of Information Technology</strong>  
+              University of Colombo School of Computing (UCSC)  
+              <span class="date">2023 Oct – Present</span>
+            </li>
+            <li>
+              <strong>G.C.E Advanced Level</strong>  
+              Kingswood College  
+              <span class="date">2020 – 2022 (2023)</span>
+            </li>
+            <li>
+              <strong>G.C.E Ordinary Level</strong>  
+              Kingswood College  
+              <span class="date">2019</span>
+            </li>
+          </ul>
         </div>
 
-        <a href="Resume Danilka Ekanayake.pdf" download class="download-btn">Download PDF</a>
-</section>
-
-  <button id="backToTop" class="Back-to-Top">⬆</button>
-
-    <footer class="footer-content">
-    <div class="footer-main">
-      <h2 data-aos="fade-up">More Information</h2>
-      <p>Visit my social media platforms.</p>
-      <div class="social-media-icons">
-        <a href="https://www.linkedin.com/in/danilka-ekanayake/" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Danilka-Ekanayake" class="github" aria-label="Github"><i class="fab fa-github"></i></a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=danilkaekanayake@gmail.com&su=Hello&body=I%20visited%20your%20portfolio" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://web.facebook.com/profile.php?id=100086481592555" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.whatsapp.com/" class="whatsapp" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
-      </div>
-      <p>© 2025 Danilka Ekanayake | All Rights Reserved</p>
-      <P>React version coming soon...</P>
-    </div>
-  </footer>
- <script defer src="portfolio.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <!-- Projects / Experience -->
+<div class="resume-box">
+  <h3>Projects / Experience</h3>
+  <ul class="project-list">
+    <li>
+      <i class="fas fa-shopping-cart project-icon"></i>
+      <strong>Ceylomart</strong> – Built an eCommerce website using HTML, CSS, and JavaScript. (2025)
+    </li>
+    <li>
+      <i class="fas fa-coffee project-icon"></i>
+      <strong>Cafe Bliss</strong> – Created a modern café website with AOS animations. (2025)
+    </li>
+    <li>
+      <i class="fas fa-bullhorn project-icon"></i>
+      <strong>Novex Foxter</strong> – Designed a branding & marketing site with a black-gold theme. (2025)
+    </li>
+    <li>
+      <i class="fas fa-user project-icon"></i>
+      <strong>Portfolio Website</strong> – Personal site to showcase skills, projects, and resume. (2025)
+    </li>
+  </ul>
 </div>
+
+
+        <!-- Certifications
+        <div class="resume-box" data-aos="fade-up" data-aos-delay="400">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Responsive Web Design – FreeCodeCamp (2025, In Progress)</li>
+            <li>Java Programming Fundamentals – UCSC BIT Program (2024)</li>
+          </ul>
+        </div> -->
+
+        <!-- Achievements -->
+        <div class="resume-box">
+          <h3>Achievements</h3>
+          <ul>
+            <li>Completed 1st year of BIT degree (Diploma expected by Nov 2025)</li>
+          </ul>
+        </div>
+
+        <!-- Download -->
+        <div class="download-section" data-aos="fade-up">
+          <a href="Resume Danilka Ekanayake.pdf" download class="download-btn">
+            <i class="fas fa-file-pdf"></i> Download PDF
+          </a>
+          <a href="https://www.linkedin.com/in/danilka-ekanayake/" target="_blank" class="download-btn secondary">
+            <i class="fab fa-linkedin"></i> View on LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="Back-to-Top"><i class="fas fa-arrow-up"></i></button>
+
+
+    <!-- Footer -->
+    <footer class="footer-content">
+      <div class="footer-main">
+        <h2 data-aos="fade-up">More Information</h2>
+        <p>Visit my social media platforms.</p>
+        <div class="social-media-icons">
+          <a href="https://www.linkedin.com/in/danilka-ekanayake/" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Danilka-Ekanayake" class="github" aria-label="Github"><i class="fab fa-github"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=danilkaekanayake@gmail.com&su=Hello&body=I%20visited%20your%20portfolio" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=100086481592555" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/947XXXXXXXX" class="whatsapp" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2025 Danilka Ekanayake | All Rights Reserved</p>
+        <p>React version coming soon...</p>
+      </div>
+    </footer>
+  </div>
+
+  <script defer src="portfolio.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>

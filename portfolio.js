@@ -112,18 +112,17 @@ AOS.init({
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 1500) {
-    backToTopBtn.style.display = "block";
-  } 
-  else {
-    backToTopBtn.style.display = "none";
+  if (window.scrollY > 1000) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
   }
 });
 
-// Scroll to top smoothly
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
 
 //Skills section 
  window.addEventListener("load", () => {

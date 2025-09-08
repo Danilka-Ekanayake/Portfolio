@@ -478,7 +478,7 @@ h2 {
 }
 /*About page*/
 .aboutme {
-  background: linear-gradient(135deg, #c8d2f6, #9bafff);
+  background-color: #9c9c9c;
   padding: 50px 20px;
 }
 
@@ -490,20 +490,22 @@ h2 {
 }
 
 .profile-container {
-  flex: 1 1 250px;
+  display: flex;
   max-width: 300px;
   border: solid 2px #0a1a38;
-  border-radius: 10%;
+  border-radius: 20px;
+  box-shadow:0 8px 25px rgba(0, 3, 81, 0.2);
   transition: 0.3s;
 }
 .profile-container:hover{
   border: solid 2px #0a1a38;
-  border-radius: 10%;
+  border-radius: 20px;
+  box-shadow:0 8px 25px rgba(0, 3, 81, 0.7);
   transform: scale(1.05);
 }
 .profile-photo {
   width: 100%;
-  border-radius: 10%;
+  border-radius: 20px;
 }
 
 .aboutme-content {
@@ -512,7 +514,7 @@ h2 {
 
 .aboutme-content h2 {
   font-size: 45px;
-  color: #000;
+  color: #0a1a38;
   margin-bottom: 20px;
 }
 
@@ -527,7 +529,8 @@ h2 {
   display: inline-block;
   margin: 20px 0;
   padding: 0.75rem 1.5rem;
-  background-color: #0a1a38;
+  background-color: transparent;
+  border: solid 2px #ffffff;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -535,8 +538,9 @@ h2 {
 }
 
 .download-cv:hover {
-  background-color: #9c9c9c;
-  color: #0a1a38;
+  border: solid 2px #0a1a38;
+  background-color: #0a1a38;
+  color: #ffffff;
   transform: scale(1.05);
 }
 
@@ -550,17 +554,17 @@ h2 {
 .fact {
   flex: 1 1 150px;
   background: #c4c4c4;
-  border:solid 2px #181718;
+  border:solid 2px #0a1a38;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   color: #000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 3, 81, 0.2);
   transition: 0.3s;
 }
 .fact:hover{
-  border:solid 2px #181718;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+  border:solid 2px #0a1a38;
+  box-shadow: 0 4px 10px rgba(0, 3, 81, 0.7);
   transform: scale(1.05);
 }
 .fact span {
@@ -578,16 +582,19 @@ h2 {
 .aboutmebutton-container button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background-color: #0a1a38;
+  background-color: transparent;
   color: #ffffff;
+  border: solid 2px #ffffff;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .aboutmebutton-container button:hover {
-  background: #9c9c9c;
-  color: #0a1a38;
+  background: #0a1a38;
+  color: #ffffff;
+  border: solid 2px #0a1a38;
+  border-radius: 5px;
   transform: scale(1.05);
 }
 
@@ -837,12 +844,15 @@ background-color: #9c9c9c;
   margin-top: 40px; 
   margin-bottom: 40px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+  transition: background-color 0.2s, transform 0.2s;
   width: 100%;
   max-width: 300px;  /* prevents cards from stretching too wide */
   margin: 0 auto;
 }
 
-
+.skill-card:hover{
+  transform: scale(1.04);
+}
 .skill-card h3 { 
   color: #fff;
   margin-bottom: 20px; 
@@ -927,11 +937,14 @@ background-color: #9c9c9c;
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.2s;
   font-style: italic;
   position: relative;
 }
 .feedback-card:hover{
-  box-shadow: 0 20px 40px rgba(10, 26, 56, 0.5);
+  transform: scale(1.04);
+  box-shadow: 0 20px 40px rgba(10, 26, 56, 0.7);
+
 }
 .feedback-card h4 {
   margin-top: 20px;
@@ -1029,26 +1042,48 @@ background-color: #9c9c9c;
     font-size: 40px;
   }
 }
-/* Back to Top Button */
 .Back-to-Top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    padding: 6px 10px;
-    font-size: 30px;
-    border: none;
-    border-radius: 50%;
-    background-color: #000000;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0077b5, #0a1a38);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.Back-to-Top.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .Back-to-Top:hover {
-    background-color: #c4c4c4;
-    color: #0a1a38;
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg, #0a1a38, #0077b5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+
+.Back-to-Top i {
+  animation: bounceIcon 1.5s infinite;
+}
+
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
 
 
 /* Animations */
@@ -1359,73 +1394,104 @@ background-color: #9c9c9c;
     border-radius: 5px;
 }
 
-/*Resume section*/
+/* Resume Section */
 .resume-section {
-    background-image: url('https://images.pexels.com/photos/13664517/pexels-photo-13664517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    padding: 4rem 1rem;
-    background-color: #f9f9f9;
-    color: #0a1a38;
-    text-align: center;
+  padding: 80px 20px;
+  background: #9c9c9c;
+  text-align: center;
 }
 
 .resume-section h2 {
-    color: #0a1a38;
-    font-size: 45px;
-    margin-bottom: 1rem;
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #0a1a38;
 }
 
-.resume-section p {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    color: #000000;
-}
-
-.resume-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+.resume-summary {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1rem;
+  color: #000000;
+  line-height: 1.6;
 }
 
 .resume-box {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: left;
+  background: #0a1a38;
+  padding: 25px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 3, 81, 0.2);
+  max-width: 800px;
+  text-align: left;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
+.resume-box:hover{
+  box-shadow: 0 8px 25px rgba(0, 3, 81, 0.7);
+  transform: scale(1.04);
+}
 .resume-box h3 {
-    font-size: 1.3rem;
-    color: #0a1a38;
-    margin-bottom: 1rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
 }
 
 .resume-box ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    line-height: 1.6;
-    color: #333;
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-box ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.resume-box .date {
+  font-size: 0.9rem;
+  color: #c4c4c4;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Download Buttons */
+.download-section {
+  margin-top: 30px;
 }
 
 .download-btn {
-    background-color: #0a1a38;
-    color: #c4c4c4;
-    padding: 10px 20px;
-    width: 325px;
-    height: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px 30px 15px;
-    transition: background-color 0.3s;
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.download-btn i {
+  margin-right: 8px;
+}
+
+.download-btn {
+  background: #222;
+  color: #fff;
 }
 
 .download-btn:hover {
-    background-color:#c4c4c4;
-    color: #0a1a38;
+  background: #444;
+}
+
+.download-btn.secondary {
+  background: #0077b5;
+  color: #fff;
+}
+
+.download-btn.secondary:hover {
+  background: #005582;
 }
 
 /* Footer */

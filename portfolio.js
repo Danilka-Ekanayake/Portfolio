@@ -12,6 +12,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
     elements.forEach(el => observer.observe(el));
 });
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  const pageWrapper = document.querySelector("#page-wrapper, .page-wrapper");
+
+  setTimeout(() => {
+    if (loader) {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+      loader.style.visibility = "hidden";
+    }
+
+    if (pageWrapper) {
+      pageWrapper.classList.add("show");
+    }
+
+    document.body.classList.remove("no-scroll");
+  }, 700);
+});
+
+function applyTheme(theme) {
+  document.body.classList.toggle('dark-mode', theme === 'dark');
+  const themeButton = document.querySelector('.theme-toggle');
+  if (themeButton) {
+    themeButton.innerHTML = theme === 'dark'
+      ? '<i class="fas fa-sun"></i>Light'
+      : '<i class="fas fa-moon"></i>Dark';
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('site-theme', nextTheme);
+  applyTheme(nextTheme);
+}
+
+function initThemeToggle() {
+  const header = document.querySelector('.header');
+  if (!header) {
+    return;
+  }
+
+  const themeButton = document.createElement('button');
+  themeButton.type = 'button';
+  themeButton.className = 'theme-toggle';
+  themeButton.setAttribute('aria-label', 'Toggle dark mode');
+  themeButton.addEventListener('click', toggleTheme);
+
+  const wrapper = document.createElement('div');
+  wrapper.style.display = 'flex';
+  wrapper.style.alignItems = 'center';
+  wrapper.appendChild(themeButton);
+  header.appendChild(wrapper);
+
+  const savedTheme = localStorage.getItem('site-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(savedTheme);
+}
+
+document.addEventListener('DOMContentLoaded', initThemeToggle);
+
 const hamburger = document.createElement('div');
 hamburger.classList.add('hamburger');
 hamburger.innerHTML = '<span></span><span></span><span></span>';
@@ -36,46 +96,55 @@ hamburger.addEventListener('click', () => {
 
 
 const typedText = document.querySelector(".typed-text");
-  const phrases = [
-    "Building Clean, Scalable Solutions",
-    "Building Websites",
-    "Full Stack Projects",
-    "Front-end Development"
-  ];
-  let phraseIndex = 0;
-  let letterIndex = 0;
-  let isDeleting = false;
+const phrases = [
+  "Building Clean, Scalable Solutions",
+  "Building Websites",
+  "Full Stack Projects",
+  "Front-end Development"
+];
+let phraseIndex = 0;
+let letterIndex = 0;
+let isDeleting = false;
 
-  function type() {
-    const currentPhrase = phrases[phraseIndex];
-
-    if (isDeleting) {
-      letterIndex--;
-    } else {
-      letterIndex++;
-    }
-
-    typedText.textContent = currentPhrase.substring(0, letterIndex);
-
-    if (!isDeleting && letterIndex === currentPhrase.length) {
-      isDeleting = true;
-      setTimeout(type, 1000); // wait before deleting
-    } else if (isDeleting && letterIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      setTimeout(type, 500); // wait before typing next
-    } else {
-      const typingSpeed = isDeleting ? 50 : 100;
-      setTimeout(type, typingSpeed);
-    }
+function type() {
+  if (!typedText) {
+    return;
   }
 
+  const currentPhrase = phrases[phraseIndex];
+
+  if (isDeleting) {
+    letterIndex--;
+  } else {
+    letterIndex++;
+  }
+
+  typedText.textContent = currentPhrase.substring(0, letterIndex);
+
+  if (!isDeleting && letterIndex === currentPhrase.length) {
+    isDeleting = true;
+    setTimeout(type, 1000); // wait before deleting
+  } else if (isDeleting && letterIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    setTimeout(type, 500); // wait before typing next
+  } else {
+    const typingSpeed = isDeleting ? 50 : 100;
+    setTimeout(type, typingSpeed);
+  }
+}
+
+if (typedText) {
   document.addEventListener("DOMContentLoaded", type);
-  document.addEventListener("DOMContentLoaded", type);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const greetingElement = document.getElementById("greeting");
   const dateElement = document.getElementById("date");
-  const greetingContainer = document.getElementById("greeting-container");
+
+  if (!greetingElement || !dateElement) {
+    return;
+  }
 
   const now = new Date();
   const hours = now.getHours();
@@ -112,6 +181,10 @@ AOS.init({
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
+  if (!backToTopBtn) {
+    return;
+  }
+
   if (window.scrollY > 1000) {
     backToTopBtn.classList.add("show");
   } else {
@@ -119,9 +192,11 @@ window.addEventListener("scroll", () => {
   }
 });
 
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (backToTopBtn) {
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 
 //Skills section 

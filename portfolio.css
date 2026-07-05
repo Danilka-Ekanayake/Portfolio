@@ -1451,13 +1451,13 @@ body {
   
   .portfolio-content h3 {
     font-size: 1.5rem;
-    color: var(--text);
+    color: var(--hero-title);
     margin-bottom: 0.5rem;
   }
   
   .portfolio-content p {
     font-size: 1rem;
-    color: var(--text);
+    color: var(--hero-title);
   }
   
   /* Project Tags */
@@ -1546,7 +1546,7 @@ body {
 .contact-form-wrapper {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -1565,7 +1565,7 @@ body {
 .contact-form-wrapper label {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--text);
+    color: var(--hero-title);
 }
 
 .contact-form-wrapper input,
@@ -1714,7 +1714,7 @@ body {
 
 .resume-box .date {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--hero-title);
   display: block;
   margin-top: 4px;
 }
